@@ -17,17 +17,13 @@ import androidx.navigation.compose.rememberNavController
 import com.example.inventory.R.string
 import com.example.inventory.ui.navigation.InventoryNavHost
 
-/**
- * Top level composable that represents screens for the application.
- */
+
 @Composable
 fun InventoryApp(navController: NavHostController = rememberNavController()) {
     InventoryNavHost(navController = navController)
 }
 
-/**
- * App bar to display title and conditionally display the back navigation.
- */
+
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun InventoryTopAppBar(
@@ -37,7 +33,8 @@ fun InventoryTopAppBar(
     scrollBehavior: TopAppBarScrollBehavior? = null,
     navigateUp: () -> Unit = {}
 ) {
-    CenterAlignedTopAppBar(title = { Text(title) },
+    CenterAlignedTopAppBar(
+        title = { Text(title) },
         modifier = modifier,
         scrollBehavior = scrollBehavior,
         navigationIcon = {
@@ -49,5 +46,6 @@ fun InventoryTopAppBar(
                     )
                 }
             }
-        })
+        }
+    )
 }
